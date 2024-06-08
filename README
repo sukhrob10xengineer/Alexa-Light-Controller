@@ -1,0 +1,74 @@
+# FauxmoESP Alexa-Controlled LED
+
+This project demonstrates how to use the FauxmoESP library to control an LED using Alexa. The LED can be turned on and off using voice commands via Amazon Alexa.
+
+## Components Required
+
+- ESP32 or ESP8266 microcontroller
+- LED
+- Resistor (220Ω is recommended)
+- Breadboard and jumper wires
+- USB cable for programming and power
+
+## Circuit Diagram
+
+Connect the components as follows:
+
+1. Connect the anode (long leg) of the LED to GPIO 12 of the ESP32/ESP8266 through a 220Ω resistor.
+2. Connect the cathode (short leg) of the LED to the GND pin of the ESP32/ESP8266.
+
+## Software Requirements
+
+- Arduino IDE (version 1.8.0 or higher)
+- ESP32/ESP8266 board support installed in Arduino IDE
+- FauxmoESP library installed in Arduino IDE
+
+## Installation
+
+1. **Install Arduino IDE:**
+   Download and install the latest version of the Arduino IDE from [here](https://www.arduino.cc/en/software).
+
+2. **Install ESP32/ESP8266 Board Support:**
+   - Open the Arduino IDE.
+   - Go to `File > Preferences`.
+   - In the "Additional Board Manager URLs" field, add:
+     ```
+     https://dl.espressif.com/dl/package_esp32_index.json
+     http://arduino.esp8266.com/stable/package_esp8266com_index.json
+     ```
+   - Go to `Tools > Board > Boards Manager`.
+   - Search for `ESP32` and `ESP8266` and install the respective packages.
+
+3. **Install FauxmoESP Library:**
+   - Go to `Sketch > Include Library > Manage Libraries`.
+   - Search for `fauxmoESP` and install the latest version.
+
+## Usage
+
+1. **Open the Arduino IDE:**
+   - Copy and paste the provided code into a new Arduino sketch.
+
+2. **Replace Wi-Fi Credentials:**
+   - Update the `WIFI_SSID` and `WIFI_PASS` macros with your Wi-Fi network's SSID and password.
+
+3. **Upload the Sketch:**
+   - Connect your ESP32/ESP8266 to your computer via USB.
+   - Select the appropriate board and port from the `Tools` menu.
+   - Click the upload button to program your ESP32/ESP8266.
+
+4. **Set Up Alexa:**
+   - Ensure your Alexa device is connected to the same Wi-Fi network as your ESP32/ESP8266.
+   - Open the Alexa app and navigate to the device settings.
+   - Ask Alexa to "discover devices" or manually add a new device. The LED should appear as "led one".
+s
+## Troubleshooting
+
+- **Device Not Found by Alexa:** 
+  - Ensure your ESP32/ESP8266 and Alexa are on the same Wi-Fi network.
+  - Restart both the ESP32/ESP8266 and the Alexa device, then try discovering devices again.
+
+- **LED Not Responding:**
+  - Verify the circuit connections.
+  - Check the serial monitor for any error messages.
+  - Ensure the GPIO pin number matches your circuit.
+
